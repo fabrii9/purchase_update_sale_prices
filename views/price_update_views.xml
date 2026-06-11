@@ -87,7 +87,7 @@
     <record id="action_purchase_sale_price_update" model="ir.actions.act_window">
         <field name="name">Actualizaciones de precios</field>
         <field name="res_model">purchase.sale.price.update</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="search_view_id" ref="purchase_sale_price_update_search_view"/>
     </record>
 
