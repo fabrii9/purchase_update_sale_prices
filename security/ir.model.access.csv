@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_sale_price_update_user,purchase.sale.price.update.user,model_purchase_sale_price_update,purchase.group_purchase_user,1,0,1,0
+access_purchase_sale_price_update_system,purchase.sale.price.update.system,model_purchase_sale_price_update,base.group_system,1,1,1,1
+access_purchase_sale_price_update_line_user,purchase.sale.price.update.line.user,model_purchase_sale_price_update_line,purchase.group_purchase_user,1,0,1,0
+access_purchase_sale_price_update_line_system,purchase.sale.price.update.line.system,model_purchase_sale_price_update_line,base.group_system,1,1,1,1
+access_purchase_price_update_wizard_user,purchase.price.update.wizard.user,model_purchase_price_update_wizard,purchase.group_purchase_user,1,1,1,0
+access_purchase_price_update_wizard_system,purchase.price.update.wizard.system,model_purchase_price_update_wizard,base.group_system,1,1,1,1

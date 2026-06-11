@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="purchase_order_form_inherit_update_sale_prices" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.update.sale.prices</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Campo auxiliar invisible para garantizar que se cargue en la vista -->
+            <xpath expr="//sheet" position="inside">
+                <field name="show_update_sale_prices_button" invisible="1"/>
+            </xpath>
+            <!-- Botón en el header, visible solo cuando corresponde -->
+            <xpath expr="//header" position="inside">
+                <button name="action_open_sale_price_update_wizard"
+                        string="Actualizar precios"
+                        type="object"
+                        class="oe_highlight"
+                        invisible="not show_update_sale_prices_button"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
