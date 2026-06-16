@@ -37,7 +37,7 @@ class PurchasePriceUpdateWizard(models.TransientModel):
             lambda l: l.product_id
             and l.product_id.type in ('product', 'consu')
             and l.qty_received > 0
-            and l.price_unit > 0
+            and l.product_id.product_tmpl_id.standard_price > 0
         )
 
         if not valid_lines:
@@ -53,9 +53,9 @@ class PurchasePriceUpdateWizard(models.TransientModel):
             product = line.product_id
             tmpl = product.product_tmpl_id
             old_price = tmpl.list_price or 0.0
-            # Nota: se usa price_unit directamente como base.
+            # Se usa el costo registrado en la plantilla del producto como base.
             # Si en el futuro se requiere conversión de moneda, modificar aquí.
-            purchase_price = line.price_unit
+            purchase_price = tmpl.standard_price
             new_price = purchase_price * (1 + self.percentage / 100.0)
 
             # Actualizar precio de venta en la plantilla del producto
